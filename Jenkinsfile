@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                cd './jenkins'
+                // sh './jenkins'
                 sh 'mvn clean install'
             }
         }
