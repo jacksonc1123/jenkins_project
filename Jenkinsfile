@@ -13,7 +13,7 @@ pipeline {
             echo 'Build failed'
         }
         success {
-            echo 'build passed'
+            echo 'Build passed'
         }
     }
 }
