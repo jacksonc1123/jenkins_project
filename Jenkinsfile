@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
@@ -9,10 +9,10 @@ pipeline {
     }
     post {
         failure {
-            sh "echo 'failed to build'"
+            echo 'Build failed'
         }
         success {
-            sh "echo 'build passed'"
+            echo 'build passed'
         }
     }
 }
