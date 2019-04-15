@@ -7,4 +7,12 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            sh "echo 'failed to build'"
+        }
+        success {
+            sh "echo 'build passed'"
+        }
+    }
 }
