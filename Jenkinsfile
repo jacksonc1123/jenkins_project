@@ -1,9 +1,13 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent { 
+        docker { 
+            image 'maven:3.3.3' 
+        } 
+    }
     stages {
         stage('Build') {
             steps {
-                cd ./jenkins
+                cd './jenkins'
                 mvn clean install
             }
         }
