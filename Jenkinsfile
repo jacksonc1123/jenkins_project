@@ -1,11 +1,12 @@
 pipeline {
-    // agent { 
-    //     docker { 
-    //         image 'maven:3.3.3' 
-    //     } 
-    // }
     agent any
     stages {
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'SonarQube Scanner 2.8';
+            withSonarQubeEnv('SonarQube-Jenkins') {
+            sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
         stage('Build') {
             steps {
                 sh 'cd ./jenkins && mvn clean install'
