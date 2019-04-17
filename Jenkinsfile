@@ -8,13 +8,12 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                // script {
-                //     def scannerHome = tool 'SonarQube Scanner 2.8'
-                //     withSonarQubeEnv('Local SonarQube') {
-                //         sh "${scannerHome}/bin/sonar-scanner"
-                //     }
-                // }
-                sh 'cd ./jenkins && mvn sonar:sonar'
+                script {
+                    def scannerHome = tool 'SonarQube Scanner 2.8'
+                    withSonarQubeEnv('Local SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
             }
         }
     }
