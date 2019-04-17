@@ -10,8 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DemoApplicationTests {
 
 	@Test
-	public void contextLoads() {
-		// This is empty in all of the examples
+	public void contextLoads() throws Exception {
+		// This has not reasonable test data
 	}
 
 }
