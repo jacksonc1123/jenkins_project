@@ -9,9 +9,9 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    scannerHome = tool '(SonarQube Scanner) SonarQube-Jenkins'
+                    scannerHome = tool 'SonarQube Scanner 2.8'
                 }
-                withSonarQubeEnv('(SonarQube Scanner) SonarQube-Jenkins') {
+                withSonarQubeEnv('SonarQube Scanner 2.8') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
