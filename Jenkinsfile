@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd ./jenkins && mvn clean install'
+                sh 'cd ./jenkins && mvn clean install dockerfile:build'
             }
         }
         stage('SonarQube Analysis') {
