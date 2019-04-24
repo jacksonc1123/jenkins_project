@@ -11,7 +11,6 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() throws Exception {
-		// This has not reasonable test data
 	}
 
 }
